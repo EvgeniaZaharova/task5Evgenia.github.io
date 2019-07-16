@@ -9,42 +9,42 @@
             var m = [
             {
             text: "Животные",
-            children: [
+            childs: [
             {
             	text: "Млекопитающие",
-            	children: [
+            	childs: [
             	{
             		text: "Коровы",
-            		children: []
+            		childs: []
             	},
             	{
             		text: "Ослы",
-            		children: []
+            		childs: []
             	},
             	{
             		text: "Собаки",
-            		children: []
+            		childs: []
             	},
             	{
             		text: "Тигры",
-            		children: []
+            		childs: []
             	}
             	]
             },
             {
             	text: "Другие",
-            	children: [
+            	childs: [
             	{
             		text: "Змеи",
-            		children: []
+            		childs: []
             	},
             	{
             		text: "Птицы",
-            		children: []
+            		childs: []
             	},
             	{
             		text: "Ящерицы",
-            		children: []
+            		childs: []
             	}
             	]
             }
@@ -52,26 +52,26 @@
             },
             {
             text: "Рыбы",
-            children: [
+            childs: [
             {
             	text: "Аквариумные",
-            	children: [
+            	childs: [
             	{
             		text: "Гуппи",
-            		children: []
+            		childs: []
             	},
             	{
             		text: "Скалярии",
-            		children: []
+            		childs: []
             	}
             	]
             },
             {
             	text: "Морские",
-            	children: [
+            	childs: [
             	{
             		text: "Морская форель",
-            		children: []
+            		childs: []
             	}
             	]
             }
@@ -81,11 +81,13 @@
              
             function addItem(item, par)
 			{
-               if (item.length > 0) {
+               if (item.length > 0)
+			   {
                    par.append("<ul></ul>");
-                   for (var i = 0; i < item.length; i++) {
+                   for (var i = 0; i < item.length; i++)
+				   {
                        par.children("ul").append("<li><span>" + item[i].text + "</span></li>");
-                       addItem(item[i].children, par.children("ul").children("li:last-child"))
+                       addItem(item[i].childs, par.children("ul").children("li:last-child"))
                     }
                 }
             }
